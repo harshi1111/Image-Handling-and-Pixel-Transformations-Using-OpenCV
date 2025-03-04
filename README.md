@@ -31,29 +31,34 @@ Display the original, lower contrast, and higher contrast images.
 Split the image (boy.jpg) into B, G, R components and display the channels
 
 ## Program Developed By:
-- **Name:** [Your Name Here]  
-- **Register Number:** [Your Register Number Here]
+- **Name:** HARSHITHA V 
+- **Register Number:** 212223230074
 
   ### Ex. No. 01
 
 #### 1. Read the image ('Eagle_in_Flight.jpg') using OpenCV imread() as a grayscale image.
 ```python
-# YOUR CODE HERE
+import cv2
+image_gray = cv2.imread('Eagle_in_Flight.jpg', cv2.IMREAD_GRAYSCALE)
 ```
 
 #### 2. Print the image width, height & Channel.
 ```python
-# YOUR CODE HERE
+height, width = image_gray.shape  
+channels = 1  
+print(f"Width: {width}, Height: {height}, Channels: {channels}")
 ```
 
 #### 3. Display the image using matplotlib imshow().
 ```python
-# YOUR CODE HERE
+import matplotlib.pyplot as plt
+plt.imshow(image_gray, cmap='gray')
+plt.show()
 ```
 
 #### 4. Save the image as a PNG file using OpenCV imwrite().
 ```python
-# YOUR CODE HERE
+cv2.imwrite('Eagle_in_Flight_gray.png', image_gray)
 ```
 
 #### 5. Read the saved image above as a color image using cv2.cvtColor().
@@ -63,7 +68,7 @@ Split the image (boy.jpg) into B, G, R components and display the channels
 
 #### 6. Display the Colour image using matplotlib imshow() & Print the image width, height & channel.
 ```python
-# YOUR CODE HERE
+image_color = cv2.cvtColor(cv2.imread('Eagle_in_Flight_gray.png', cv2.IMREAD_GRAYSCALE), cv2.COLOR_GRAY2BGR)
 ```
 
 #### 7. Crop the image to extract any specific (Eagle alone) object from the image.
