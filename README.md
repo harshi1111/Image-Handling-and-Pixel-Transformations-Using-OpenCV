@@ -53,60 +53,105 @@ print(f"Width: {width}, Height: {height}, Channels: {channels}")
 ```python
 import matplotlib.pyplot as plt
 plt.imshow(image_gray, cmap='gray')
+plt.axis('off')
 plt.show()
 ```
 
 #### 4. Save the image as a PNG file using OpenCV imwrite().
 ```python
-cv2.imwrite('Eagle_in_Flight_gray.png', image_gray)
+cv2.imwrite(r"C:\Users\admin\Downloads\Eagle_in_Flight.png", image_gray)
 ```
 
 #### 5. Read the saved image above as a color image using cv2.cvtColor().
 ```python
-# YOUR CODE HERE
+image_color = cv2.cvtColor(cv2.imread(r"C:\Users\admin\Downloads\Eagle_in_Flight.png"), cv2.COLOR_BGR2RGB)
 ```
 
 #### 6. Display the Colour image using matplotlib imshow() & Print the image width, height & channel.
 ```python
-image_color = cv2.cvtColor(cv2.imread('Eagle_in_Flight_gray.png', cv2.IMREAD_GRAYSCALE), cv2.COLOR_GRAY2BGR)
+import cv2
+import matplotlib.pyplot as plt
+
+# Read the original color image, not the grayscale one
+image_color = cv2.imread(r"C:\Users\admin\Downloads\Eagle_in_Flight.jpg", cv2.IMREAD_COLOR)
+image_rgb = cv2.cvtColor(image_color, cv2.COLOR_BGR2RGB)  # Convert BGR to RGB for correct display
+
+# Display the image
+plt.imshow(image_rgb)
+plt.axis('off')
+plt.show()
+
+# Print width, height & channels
+height, width, channels = image_color.shape
+print(f"Width: {width}, Height: {height}, Channels: {channels}")
+
 ```
 
 #### 7. Crop the image to extract any specific (Eagle alone) object from the image.
 ```python
-# YOUR CODE HERE
+cropped_image = image_rgb[100:500, 200:600]  
+plt.imshow(cropped_image)
+plt.axis('off')
+plt.show()
+
 ```
 
 #### 8. Resize the image up by a factor of 2x.
 ```python
-# YOUR CODE HERE
+# Resize the image by a factor of 2x
+height, width = image_rgb.shape[:2]
+resized_image = cv2.resize(image_rgb, (width * 2, height * 2))
+
+# Display the resized image
+plt.imshow(resized_image)
+plt.axis('off')
+plt.show()
 ```
 
 #### 9. Flip the cropped/resized image horizontally.
 ```python
-# YOUR CODE HERE
+# Flip the image horizontally
+flipped_image = cv2.flip(resized_image, 1)
+
+# Display the flipped image
+plt.imshow(flipped_image)
+plt.axis('off')
+plt.show()
 ```
 
 #### 10. Read in the image ('Apollo-11-launch.jpg').
 ```python
-# YOUR CODE HERE
+image = cv2.imread('Apollo-11-launch.jpg', cv2.IMREAD_COLOR)
 ```
 
 #### 11. Add the following text to the dark area at the bottom of the image (centered on the image):
 ```python
-text = 'Apollo 11 Saturn V Launch, July 16, 1969'
+text = "Apollo 11 Saturn V Launch, July 16, 1969"
 font_face = cv2.FONT_HERSHEY_PLAIN
-# YOUR CODE HERE: use putText()
+font_scale = 2
+thickness = 2
+color = (255, 255, 255)
+
+text_size = cv2.getTextSize(text, font_face, font_scale, thickness)[0]
+text_x = (image.shape[1] - text_size[0]) // 2
+text_y = image.shape[0] - 50
+
+cv2.putText(image, text, (text_x, text_y), font_face, font_scale, color, thickness)
 ```
 
 #### 12. Draw a magenta rectangle that encompasses the launch tower and the rocket.
 ```python
-rect_color = magenta
-# YOUR CODE HERE
+rect_color = (255, 0, 255)  # Magenta in BGR
+cv2.rectangle(image, (x1, y1), (x2, y2), rect_color, 2)
 ```
 
 #### 13. Display the final annotated image.
 ```python
-# YOUR CODE HERE
+rect_color = (255, 0, 255)  # Magenta in BGR
+top_left = (250, 100)   # Adjust as needed
+bottom_right = (550, 700)  # Adjust as needed
+
+cv2.rectangle(image, top_left, bottom_right, rect_color, 3)
 ```
 
 #### 14. Read the image ('Boy.jpg').
@@ -175,4 +220,3 @@ matrix2 =
 
 ## Result:
 Thus, the images were read, displayed, brightness and contrast adjustments were made, and bitwise operations were performed successfully using the Python program.
-
