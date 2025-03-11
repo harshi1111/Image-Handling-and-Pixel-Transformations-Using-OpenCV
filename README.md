@@ -215,40 +215,66 @@ plt.show()
 
 ## Output:
 - **i)** Read and Display an Image.
-- 1.Read 'Eagle_in_Flight.jpg' as grayscale and display:
+  
+  1.Read 'Eagle_in_Flight.jpg' as grayscale and display:
+
+  
   ![image](https://github.com/user-attachments/assets/97986873-a386-4a42-b741-dcf459fefae7)
   
   2.Save image as PNG and display:
+
+
   ![image](https://github.com/user-attachments/assets/c0e8323e-e139-4e4e-92e6-09635ffb8c2f)
 
   3.Cropped image:
+
+
   ![image](https://github.com/user-attachments/assets/7c1f0a0c-d895-47bd-9ee3-587c4aeb969e)
 
   4.Resize and flip Horizontally:
+
+
   ![image](https://github.com/user-attachments/assets/2f27458a-987f-4a43-bd7c-a23e544a489e)
 
   5.Read 'Apollo-11-launch.jpg' and Display the final annotated image:
+
+
   ![image](https://github.com/user-attachments/assets/ce9368c0-110d-4e02-9134-6e821e2d2d3b)
 
 - **ii)** Adjust Image Brightness.
+  
   Create brighter and darker images and display:
+
+
   ![image](https://github.com/user-attachments/assets/572f2640-4dfd-477a-a8ba-be1c055006dd)
 
 - **iii)** Modify Image Contrast.
+  
   Modify contrast using scaling factors 1.1 and 1.2:
+
+
   ![image](https://github.com/user-attachments/assets/e82fa67e-db03-4c65-bac0-ee3cb3bf437c)
 
 - **iv)** Generate Third Image Using Bitwise Operations.
+  
   1.Split 'Boy.jpg' into B, G, R components and display:
+
+
   ![image](https://github.com/user-attachments/assets/0d909121-8b57-471f-9516-84feb35f8dd0)
 
   2.Merge the R, G, B channels and display:
+
+
   ![image](https://github.com/user-attachments/assets/42d3d55e-dc62-4921-93fe-20b187c51b3c)
 
   3.Split the image into H, S, V components and display:
+
+
   ![image](https://github.com/user-attachments/assets/8ed4cf78-8d19-4704-873d-600712da8491)
 
   4.Merge the H, S, V channels and display:
+
+
   ![image](https://github.com/user-attachments/assets/f8d463e4-9eae-4400-a2a2-fa77510e78a8)
 
 
